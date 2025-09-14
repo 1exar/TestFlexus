@@ -1,4 +1,6 @@
+using System;
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -9,6 +11,7 @@ namespace TestFlexus.Scripts.Controllers
         [Header("Cannon parts")]
         [SerializeField] private GameObject cannonPivot;
         [SerializeField] private GameObject barrelPivot;
+        [SerializeField] private TMP_Text forceText;
 
         [Header("Rotation Speeds")]
         [SerializeField] private float rotationSpeed = 30f;
@@ -20,7 +23,6 @@ namespace TestFlexus.Scripts.Controllers
 
         [Header("Fire Settings")]
         [SerializeField] private Transform startPosition;
-        [SerializeField] private float force = 50f;
         [SerializeField] private float forceMultiplier = 1f;
         [SerializeField] private Bullet bullet;
         [SerializeField] private TrajectoryRenderer trajectoryRenderer;
@@ -31,8 +33,21 @@ namespace TestFlexus.Scripts.Controllers
         
         [SerializeField] private UnityEvent onFire;
         
-        private float barrelAngleX = 0f;
-    
+        private float force = 50f;
+        
+        private float barrelAngleX;
+
+        private void Start()
+        {
+            forceText.text = force.ToString();
+        }
+
+        public void ChangeForce(float force)
+        {
+            this.force = force;
+            forceText.text = force.ToString();
+        }
+        
         private void Update()
         {
             HandleRotation();
