@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: ea11e3ae3b61c4344b3fd1ede366c5af, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -100,11 +100,10 @@ MonoBehaviour:
   mass: 0.01
   drag: 0.1
   bounce: 0.5
-  numberOfBounces: 1
-  hitObject: {fileID: 6078538969920194558}
-  vfx: {fileID: 6078538969920194558}
-  hitMarkeOffset: 0.01
-  explosionVFXOffset: 0.01
+  maxBounces: 1
+  explosionPrefab: {fileID: 0}
+  hitMarkerOffset: 0.05
+  explosionOffset: 0.1
 --- !u!114 &9080423517554996786
 MonoBehaviour:
   m_ObjectHideFlags: 0

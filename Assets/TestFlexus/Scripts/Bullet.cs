@@ -11,7 +11,6 @@ namespace TestFlexus.Scripts
         [SerializeField] private int maxBounces = 1;
 
         [Header("Effects")]
-        [SerializeField] private GameObject hitMarkerPrefab;
         [SerializeField] private GameObject explosionPrefab;
         [SerializeField] private float hitMarkerOffset = 0.05f;
         [SerializeField] private float explosionOffset = 0.1f;
@@ -66,12 +65,6 @@ namespace TestFlexus.Scripts
 
         private void HandleCollision(RaycastHit hit)
         {
-            if (hitMarkerPrefab != null)
-            {
-                Instantiate(hitMarkerPrefab, hit.point + hit.normal * hitMarkerOffset,
-                    Quaternion.LookRotation(hit.normal, Vector3.up));
-            }
-
             velocity += hit.normal * velocity.magnitude *
                         (Vector3.Dot(hit.normal, -velocity.normalized) + bounce);
 
@@ -84,6 +77,7 @@ namespace TestFlexus.Scripts
                 Explode(hit);
                 Destroy(gameObject);
             }
+            
         }
 
         private void Explode(RaycastHit hit)

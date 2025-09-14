@@ -1,18 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
-public class CameraShakeController : MonoBehaviour
+namespace TestFlexus.Scripts.Controllers
 {
-    // Start is called before the first frame update
-    void Start()
+    public class CameraShakeController : MonoBehaviour
     {
         
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        [SerializeField] private float shakeStrength = 5f;
+        [SerializeField] private float shakeDuration = 0.5f;
+        
+        public void MakeShake() => transform.DOShakePosition(shakeDuration, shakeStrength);
         
     }
 }
