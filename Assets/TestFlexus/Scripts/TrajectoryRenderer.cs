@@ -1,3 +1,4 @@
+using TestFlexus.Scripts.Transfer;
 using UnityEngine;
 
 namespace TestFlexus.Scripts
@@ -57,14 +58,5 @@ namespace TestFlexus.Scripts
 			hitMarker.position = hit.point + hit.normal * hitMarkerOffset;
 			hitMarker.rotation = Quaternion.LookRotation(hit.normal, Vector3.up);
 		}
-	}
-
-	public struct PhysicsProjectileData
-	{
-		public Vector3 Direction;
-		public Vector3 Position;
-		public float Speed;
-		public float Mass;
-		public float Drag;
 	}
 }

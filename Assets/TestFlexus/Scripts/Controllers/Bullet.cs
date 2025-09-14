@@ -1,7 +1,8 @@
 using TestFlexus.Scripts.Pools.Bullets;
+using TestFlexus.Scripts.Transfer;
 using UnityEngine;
 
-namespace TestFlexus.Scripts
+namespace TestFlexus.Scripts.Controllers
 {
     public class Bullet : MonoBehaviour
     {
@@ -38,11 +39,6 @@ namespace TestFlexus.Scripts
             remainingBounces = maxBounces;
             velocity = data.Direction * data.Speed;
             transform.position = data.Position;
-        }
-
-        private void OnEnable()
-        {
-            
         }
 
         private void FixedUpdate()
