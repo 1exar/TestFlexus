@@ -439,6 +439,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -520,6 +521,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4862765293178098748}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &963194229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f421b461df4284364be377965043679c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1071360254
 GameObject:
   m_ObjectHideFlags: 0
@@ -1170,7 +1183,7 @@ MonoBehaviour:
   startPosition: {fileID: 6884717164019398334}
   force: 73
   forceMultiplier: 0.01
-  projectile: {fileID: 6954783311605019893, guid: 22fe98d180e68964ab3c0e081e862330, type: 3}
+  bullet: {fileID: 6954783311605019893, guid: 22fe98d180e68964ab3c0e081e862330, type: 3}
   trajectoryRenderer: {fileID: 7353883693917414009}
 --- !u!120 &7353883693917414008
 LineRenderer:

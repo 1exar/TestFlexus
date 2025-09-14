@@ -20,7 +20,7 @@ public class CannonController : MonoBehaviour
     [SerializeField] private Transform startPosition;
     [SerializeField] public float force = 50f;
     [SerializeField] private float forceMultiplier = 1f;
-    [FormerlySerializedAs("projectile")] [SerializeField] private Bullet bullet;
+    [SerializeField] private Bullet bullet;
     [SerializeField] private TrajectoryRenderer trajectoryRenderer;
 
     private float barrelAngleX = 0f;
