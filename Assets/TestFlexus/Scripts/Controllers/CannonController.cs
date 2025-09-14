@@ -1,5 +1,5 @@
-using System;
 using DG.Tweening;
+using TestFlexus.Scripts.Pools.Bullets;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -8,6 +8,8 @@ namespace TestFlexus.Scripts.Controllers
 {
     public class CannonController : MonoBehaviour
     {
+        [SerializeField] private BulletsPool bulletsPool;
+        
         [Header("Cannon parts")]
         [SerializeField] private GameObject cannonPivot;
         [SerializeField] private GameObject barrelPivot;
@@ -96,9 +98,10 @@ namespace TestFlexus.Scripts.Controllers
             onFire?.Invoke();
 
             barrelPivot.transform.DOLocalMoveZ(moveZ, animationTime).OnComplete(() => barrelPivot.transform.DOLocalMoveZ(0, animationTime));
-            
-            var shotProjectile = Instantiate(bullet, startPosition.position, Quaternion.identity);
-            shotProjectile.Init(ProjectileData());
+
+            var b = bulletsPool.Get();
+            b.transform.position = startPosition.position;
+            b.Init(ProjectileData());
         }
     }
 }

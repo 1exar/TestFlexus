@@ -97,11 +97,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f15967ba86fe6314487bcdb5da3ab7aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thisPool: {fileID: 11400000, guid: 72faf40853b3047e49374d2384bb9285, type: 2}
   mass: 0.01
   drag: 0.1
   bounce: 0.5
   maxBounces: 1
-  explosionPrefab: {fileID: 0}
+  explosionPrefab: {fileID: 2433282508537954060, guid: 3ef3ae421f71c5c4e97fe12dc2fc6312, type: 3}
   hitMarkerOffset: 0.05
   explosionOffset: 0.1
 --- !u!114 &9080423517554996786

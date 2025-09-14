@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 75704174}
   - component: {fileID: 75704173}
   - component: {fileID: 75704172}
+  - component: {fileID: 75704176}
   m_Layer: 0
   m_Name: Wall 1
   m_TagString: Untagged
@@ -228,6 +229,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2060792499}
   m_LocalEulerAnglesHint: {x: 47.578, y: 0, z: 0}
+--- !u!114 &75704176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75704171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cc054c7584614358b2eae9e6cf5035a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderTexture: {fileID: 0}
+  drawMaterial: {fileID: 2100000, guid: 0965b7d3cbc7142599e78b8fa3ba27f9, type: 2}
+  decalTexture: {fileID: 2800000, guid: 1b43750a3ce7445769cc827cd31780b4, type: 3}
+  decalSize: 0.45
 --- !u!1 &155958791
 GameObject:
   m_ObjectHideFlags: 0
@@ -712,8 +729,8 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 1, g: 0.9202715, b: 0.7028302, a: 1}
+  m_Intensity: 1.6
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -790,6 +807,7 @@ GameObject:
   - component: {fileID: 762446540}
   - component: {fileID: 762446539}
   - component: {fileID: 762446538}
+  - component: {fileID: 762446542}
   m_Layer: 0
   m_Name: Wall 3
   m_TagString: Untagged
@@ -884,6 +902,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2060792499}
   m_LocalEulerAnglesHint: {x: 107.33499, y: 0, z: 0}
+--- !u!114 &762446542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762446537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cc054c7584614358b2eae9e6cf5035a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderTexture: {fileID: 0}
+  drawMaterial: {fileID: 2100000, guid: 0965b7d3cbc7142599e78b8fa3ba27f9, type: 2}
+  decalTexture: {fileID: 2800000, guid: 1b43750a3ce7445769cc827cd31780b4, type: 3}
+  decalSize: 0.45
 --- !u!1 &904194745
 GameObject:
   m_ObjectHideFlags: 0
@@ -956,8 +990,8 @@ Camera:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.8584906, g: 0.8584906, b: 0.8584906, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1075,6 +1109,7 @@ GameObject:
   - component: {fileID: 1071360257}
   - component: {fileID: 1071360256}
   - component: {fileID: 1071360255}
+  - component: {fileID: 1071360259}
   m_Layer: 0
   m_Name: Wall 2
   m_TagString: Untagged
@@ -1169,6 +1204,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2060792499}
   m_LocalEulerAnglesHint: {x: 70.568, y: 0, z: 0}
+--- !u!114 &1071360259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1071360254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cc054c7584614358b2eae9e6cf5035a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderTexture: {fileID: 0}
+  drawMaterial: {fileID: 2100000, guid: 0965b7d3cbc7142599e78b8fa3ba27f9, type: 2}
+  decalTexture: {fileID: 2800000, guid: 1b43750a3ce7445769cc827cd31780b4, type: 3}
+  decalSize: 0.45
 --- !u!1 &1146373778
 GameObject:
   m_ObjectHideFlags: 0
@@ -1284,6 +1335,7 @@ GameObject:
   - component: {fileID: 1431979166}
   - component: {fileID: 1431979165}
   - component: {fileID: 1431979164}
+  - component: {fileID: 1431979168}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -1373,11 +1425,27 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -0.54, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4.6062, y: 4.6062, z: 4.6062}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2060792499}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1431979168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431979163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cc054c7584614358b2eae9e6cf5035a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderTexture: {fileID: 0}
+  drawMaterial: {fileID: 2100000, guid: 0965b7d3cbc7142599e78b8fa3ba27f9, type: 2}
+  decalTexture: {fileID: 2800000, guid: 1b43750a3ce7445769cc827cd31780b4, type: 3}
+  decalSize: 0.045
 --- !u!1 &1459085271
 GameObject:
   m_ObjectHideFlags: 0
@@ -2051,6 +2119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36723cd762ae3124ea034d012e81cd65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletsPool: {fileID: 11400000, guid: 72faf40853b3047e49374d2384bb9285, type: 2}
   cannonPivot: {fileID: 4660172969140643994}
   barrelPivot: {fileID: 8361491873329808448}
   forceText: {fileID: 221032133}
@@ -2059,7 +2128,6 @@ MonoBehaviour:
   barrelElevationUpLimit: 30
   barrelElevationDownLimit: 10
   startPosition: {fileID: 6884717164019398334}
-  force: 50
   forceMultiplier: 0.01
   bullet: {fileID: 6954783311605019893, guid: 22fe98d180e68964ab3c0e081e862330, type: 3}
   trajectoryRenderer: {fileID: 7353883693917414009}

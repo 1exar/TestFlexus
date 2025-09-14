@@ -1,9 +1,12 @@
+using TestFlexus.Scripts.Pools.Bullets;
 using UnityEngine;
 
 namespace TestFlexus.Scripts
 {
     public class Bullet : MonoBehaviour
     {
+        [SerializeField] private BulletsPool thisPool;
+        
         [Header("Physics Settings")]
         [SerializeField] private float mass;
         [SerializeField] private float drag;
@@ -12,8 +15,6 @@ namespace TestFlexus.Scripts
 
         [Header("Effects")]
         [SerializeField] private GameObject explosionPrefab;
-        [SerializeField] private float hitMarkerOffset = 0.05f;
-        [SerializeField] private float explosionOffset = 0.1f;
 
         private int remainingBounces;
         private float flyTime;
@@ -30,13 +31,18 @@ namespace TestFlexus.Scripts
         public void Init(PhysicsProjectileData projectileData)
         {
             data = projectileData;
-        }
 
-        private void Start()
-        {
+            flyTime = 0;
+            fallTime = 0;
+            
             remainingBounces = maxBounces;
             velocity = data.Direction * data.Speed;
             transform.position = data.Position;
+        }
+
+        private void OnEnable()
+        {
+            
         }
 
         private void FixedUpdate()
@@ -75,7 +81,14 @@ namespace TestFlexus.Scripts
             if (remainingBounces < 0)
             {
                 Explode(hit);
-                Destroy(gameObject);
+                thisPool.Release(this);
+            }
+            else
+            {
+                if (hit.collider.TryGetComponent(out SurfacePainter painter))
+                {
+                    painter.Paint(hit);
+                }
             }
             
         }
@@ -85,7 +98,7 @@ namespace TestFlexus.Scripts
             if (explosionPrefab != null)
             {
                 var fx = Instantiate(explosionPrefab,
-                    hit.point + hit.normal * explosionOffset,
+                    hit.point + hit.normal,
                     Quaternion.LookRotation(hit.normal, Vector3.up));
                 Destroy(fx, 2f);
             }
